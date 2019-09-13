@@ -229,13 +229,12 @@ func TryFastUploadHandler(w http.ResponseWriter, r *http.Request) {
 			Msg:  "秒传成功",
 		}
 		w.Write(resp.JSONBytes())
-		return
 	} else {
 		resp := util.RespMsg{
 			Code: -2,
 			Msg:  "秒传失败, 请稍后重试",
 		}
 		w.Write(resp.JSONBytes())
-		return
 	}
+	return
 }
