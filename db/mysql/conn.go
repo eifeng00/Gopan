@@ -12,6 +12,8 @@ import (
 var db *sql.DB
 
 func init() {
+	// docker run --name filestoresDB -p 3306:3306 -v /data/mysql/dates/:/var/lib/mysql -e MYSQL_DATABASE=fileserver -e MYSQL_ROOT_PASSWORD=123456 -d mysql:5.7
+
 	var err error
 	db, err = sql.Open("mysql", "root:123456@tcp(127.0.0.1:3306)/fileserver?charset=utf8")
 
